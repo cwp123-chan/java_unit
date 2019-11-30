@@ -33,5 +33,6 @@ public class TaskDto {
     private String createdBy;
     private String createdAt;
     private String updatedAt;
+    private int isDeleted;
 }
 

@@ -7,6 +7,8 @@ import cn.pfinal.crm.mapper.TaskMapper;
 import cn.pfinal.crm.model.Task;
 import cn.pfinal.crm.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,9 +42,19 @@ public class TaskController {
     }
 
     @PostMapping(path = "/create")
-    JsonResult createTask(@RequestBody @Valid CreateTaskRequest request) {
+    JsonResult createTask(@RequestBody @Valid CreateTaskRequest request, BindingResult bindingResult) {
+        // 参数校验
+        if (bindingResult.hasErrors()) {
+            String messages = bindingResult.getAllErrors()
+                    .stream()
+                    .map(ObjectError::getDefaultMessage)
+                    .reduce((m1, m2) -> m1 + "；" + m2)
+                    .orElse("参数输入有误！");
+            System.out.println(messages);
+            throw new IllegalArgumentException(messages);
+        }
         taskService.create(request);
-        return new JsonResult("request");
+        return new JsonResult(request);
     }
 
     @PostMapping(path = "/update")

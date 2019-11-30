@@ -2,16 +2,14 @@ package cn.pfinal.crm.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Data
 public class CreateTaskRequest {
-    @NotNull
+    @Min(value = 1,message = "company_id不能为空")
     private int companyId;
     private int leadId;
     private int levelId;
-    @Size(max = 20)
     private String name;
     private int sex;
     private String phone;

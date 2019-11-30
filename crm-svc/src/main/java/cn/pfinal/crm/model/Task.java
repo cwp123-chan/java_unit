@@ -29,7 +29,11 @@ public class Task {
     private String createdBy;
     private String createdAt;
     private String updatedAt;
+    private int isDeleted;
     public void setName(String name){
         this.name = name;
     }
+//    public String getName(){
+//       return this.name;
+//    }
 }
