@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-lib/common-lib.iml" filepath="$PROJECT_DIR$/common-lib/common-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm.iml" filepath="$PROJECT_DIR$/crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-api/crm-api.iml" filepath="$PROJECT_DIR$/crm-api/crm-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crm-svc/crm-svc.iml" filepath="$PROJECT_DIR$/crm-svc/crm-svc.iml" />
+    </modules>
+  </component>
+</project>
